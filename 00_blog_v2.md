@@ -36,7 +36,7 @@ INSERT INTO articles(title, user_id) VALUES('premier tag', 1);
 INSERT INTO tag(name, color) VALUES('deuxieme tag', 'green');
 
 
-INSERT INTO articles(title, user_id) VALUES("gros porc", 1);
+INSERT INTO articles(title, user_id) VALUES("on est la mon gars", 1);
 INSERT INTO articles(title, user_id) VALUES("un vrai malien", 2);
 SELECT * FROM tag;
 SELECT * FROM users;
