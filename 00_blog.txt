@@ -2,16 +2,26 @@ CREATE TABLE 'users'(
   'id' INTEGER PRIMARY KEY AUTOINCREMENT,
   'name' TEXT
 );
+INSERT INTO users(name) VALUES('jiad');
+INSERT INTO users(name) VALUES('bams');
 
 CREATE TABLE 'articles'(
 'id' INTEGER PRIMARY KEY AUTOINCREMENT,
 'user_id' INTEGER,
-title TEXT
+'title' TEXT
 );
+INSERT INTO articles(title) VALUES('primier titre');
+INSERT INTO articles(title) VALUES('deuxieme titre');
+
+
 CREATE TABLE 'categories'(
   'id' INTEGER PRIMARY KEY AUTOINCREMENT,
   'name' TEXT 
 );
+INSERT INTO categories(name) VALUES('primier cate');
+INSERT INTO categories(name) VALUES('deuxieme cate');
+
+
 
 CREATE TABLE 'tag'(
   'id' INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -20,18 +30,23 @@ CREATE TABLE 'tag'(
 
 );
 
+INSERT INTO tag(name, color) VALUES('premier tag', 'red');
+INSERT INTO tag(name, color) VALUES('deuxieme tag', 'green');
+
+
+
 CREATE TABLE 'articles_categories'(
 'id' INTEGER PRIMARY KEY AUTOINCREMENT,
 'article_id' INTEGER,
 'cate_id' INTEGER,
-FOREIGN KEY(article_id) REFERENCES categories('id'),
-FOREIGN KEY(cate_id) REFERENCES articles('id')
+FOREIGN KEY(article_id) REFERENCES categories(id),
+FOREIGN KEY(cate_id) REFERENCES articles(id)
 );
 
 CREATE TABLE 'category_tag' (
 category_id INTEGER,
 tag_id INTEGER,
-FOREIGN KEY(category_id) REFERENCES categories('id'),
-FOREIGN KEY(tag_id) REFERENCES tag(id) );
+FOREIGN KEY(category_id) REFERENCES categories(id),
+FOREIGN KEY(tag_id) REFERENCES tag(id) 
+);
 
-INSERT INTO blogapp(name,title,name,name) VALUES(id)
