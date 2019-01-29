@@ -1,0 +1,11 @@
+CREATE TABLE 'pins'(
+  'id' INTEGER PRIMARY KEY AUTOINCREMENT,
+  'image_pin' TEXT
+);
+
+CREATE TABLE 'commentaires'(
+  'id' INTEGER PRIMARY KEY AUTOINCREMENT,
+  'body' TEXT,
+  'pins_id' INTEGER,
+  FOREIGN KEY (pins_id) REFERENCES pins(id) 
+);

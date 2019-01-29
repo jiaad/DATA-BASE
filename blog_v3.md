@@ -1,0 +1,61 @@
+CREATE TABLE 'users'(
+  'id' INTEGER PRIMARY KEY AUTOINCREMENT,
+  'name' TEXT);
+
+INSERT INTO users(name) VALUES('jiad');
+INSERT INTO users(name) VALUES('bams');
+
+
+CREATE TABLE 'articles'(
+'id' INTEGER PRIMARY KEY AUTOINCREMENT,
+'title' TEXT,
+'user_id' INTEGER,
+FOREIGN KEY(user_id) REFERENCES users(id));
+
+INSERT INTO articles(title) VALUES('primier titre');
+INSERT INTO articles(title) VALUES('deuxieme titre');
+INSERT INTO articles(title, user_id) VALUES('premier tag', 1);
+INSERT INTO articles(title, user_id) VALUES("on est la mon gars", 1);
+INSERT INTO articles(title, user_id) VALUES("un vrai malien", 2);
+
+
+CREATE TABLE 'categories'(
+  'id' INTEGER PRIMARY KEY AUTOINCREMENT,
+  'name' TEXT );
+
+INSERT INTO categories(name) VALUES('primier cate');
+INSERT INTO categories(name) VALUES('deuxieme cate');
+
+
+CREATE TABLE 'tag'(
+  'id' INTEGER PRIMARY KEY AUTOINCREMENT,
+  'name' TEXT,
+  'color' TEXT);
+
+
+
+CREATE TABLE 'category_tag' (
+category_id INTEGER,
+tag_id INTEGER,
+FOREIGN KEY(category_id) REFERENCES categories(id),
+FOREIGN KEY(tag_id) REFERENCES tag(id) );
+
+
+CREATE TABLE 'article_category' (
+article_id INTEGER,
+category_id INTEGER,
+FOREIGN KEY(article_id) REFERENCES articleS(id),
+FOREIGN KEY(category_id) REFERENCES categorIES(id) );
+
+SELECT * FROM articles;
+SELECT * FROM categories;
+
+
+
+INSERT INTO tag(name, color) VALUES('deuxieme tag', 'green');
+SELECT * FROM users;
+SELECT * FROM users;
+SELECT * FROM users;
+SELECT * FROM articles;
+SELECT * FROM articles;
+SELECT * FROM articles;
