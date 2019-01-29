@@ -1,0 +1,37 @@
+CREATE TABLE 'users'(
+  'id' INTEGER PRIMARY KEY AUTOINCREMENT,
+  'name' TEXT
+);
+
+CREATE TABLE 'articles'(
+'id' INTEGER PRIMARY KEY AUTOINCREMENT,
+'user_id' INTEGER,
+title TEXT
+);
+CREATE TABLE 'categories'(
+  'id' INTEGER PRIMARY KEY AUTOINCREMENT,
+  'name' TEXT 
+);
+
+CREATE TABLE 'tag'(
+  'id' INTEGER PRIMARY KEY AUTOINCREMENT,
+  'name' TEXT,
+  'color' TEXT
+
+);
+
+CREATE TABLE 'articles_categories'(
+'id' INTEGER PRIMARY KEY AUTOINCREMENT,
+'article_id' INTEGER,
+'cate_id' INTEGER,
+FOREIGN KEY(article_id) REFERENCES categories('id'),
+FOREIGN KEY(cate_id) REFERENCES articles('id')
+);
+
+CREATE TABLE 'category_tag' (
+category_id INTEGER,
+tag_id INTEGER,
+FOREIGN KEY(category_id) REFERENCES categories('id'),
+FOREIGN KEY(tag_id) REFERENCES tag(id) );
+
+INSERT INTO blogapp(name,title,name,name) VALUES(id)
