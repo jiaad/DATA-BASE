@@ -7,9 +7,9 @@ INSERT INTO users(name) VALUES('bams');
 
 CREATE TABLE 'articles'(
 'id' INTEGER PRIMARY KEY AUTOINCREMENT,
-'title' TEXT
+'title' TEXT,
 'user_id' INTEGER,
-FOREIGN KEY(user_id) REFERENCES users(id),
+FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
 INSERT INTO articles(title) VALUES('primier titre');
@@ -32,23 +32,12 @@ CREATE TABLE 'tag'(
 
 );
 
-INSERT INTO tag(name, color) VALUES('premier tag', 'red');
+INSERT INTO articles(title, user_id) VALUES('premier tag', 1);
 INSERT INTO tag(name, color) VALUES('deuxieme tag', 'green');
 
 
-
-CREATE TABLE 'articles_categories'(
-'id' INTEGER PRIMARY KEY AUTOINCREMENT,
-'article_id' INTEGER,
-'cate_id' INTEGER,
-FOREIGN KEY(article_id) REFERENCES categories(id),
-FOREIGN KEY(cate_id) REFERENCES articles(id)
-);
-
-CREATE TABLE 'category_tag' (
-category_id INTEGER,
-tag_id INTEGER,
-FOREIGN KEY(category_id) REFERENCES categories(id),
-FOREIGN KEY(tag_id) REFERENCES tag(id) 
-);
-
+INSERT INTO articles(title, user_id) VALUES("gros porc", 1);
+INSERT INTO articles(title, user_id) VALUES("un vrai malien", 2);
+SELECT * FROM tag;
+SELECT * FROM users;
+SELECT * FROM articles;
